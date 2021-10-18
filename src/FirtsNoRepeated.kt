@@ -2,23 +2,24 @@ import java.util.*
 import kotlin.collections.HashMap
 
 private fun firstNo(s : String) :Char? {
-    val chatHashMap:HashMap<Char, Int> = HashMap()
+
+    val firstHashMap:HashMap<Char, Int> = HashMap()
     var c : Char
+
     for(i in s.indices){
         c= s[i]
-        if (chatHashMap.containsKey(c)){
-            chatHashMap[c]=chatHashMap[c]!!+1
+        if (firstHashMap.containsKey(c)){
+            firstHashMap[c]=firstHashMap[c]!!+1
         } else
         {
-            chatHashMap[c] = 1
-
+            firstHashMap[c] = 1
         }
     }
+
     for(i in s.indices){
         c = s[i]
-        if (chatHashMap[c]==1)
+        if (firstHashMap[c]==1)
             return c
-
     }
     return null
 }
